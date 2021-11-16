@@ -1,0 +1,50 @@
+type TeamsResponse {
+  # leagues that are associated with the NBA
+  league: TeamsLeagues!
+}
+
+"""
+Leagues that are associated with the NBA
+"""
+type TeamsLeagues {
+  "https://pr.nba.com/nba-africa-formation/"
+  africa: [TeamsTeam!]!
+  "sacramento summer league"
+  sacramento: [TeamsTeam!]!
+  "standard NBA league"
+  standard: [TeamsTeam!]!
+  "utah summer league"
+  utah: [TeamsTeam!]!
+  "vegas summer league"
+  vegas: [TeamsTeam!]!
+}
+
+"""
+Team within the given league
+"""
+type TeamsTeam {
+  "the name of the city which the team represents"
+  city: String!
+  "the name of the team including the city"
+  fullName: String!
+  "if the team is a NBA franchise"
+  isNBAFranchise: Boolean!
+  "the name of the conference the team participates in"
+  confName: String!
+  "three letter code of the team"
+  tricode: String!
+  "abbreviation of the the team's name"
+  teamShortName: String!
+  "the name of the division the team participates in"
+  divName: String!
+  "if the team was created for the all star weekend event"
+  isAllStar: Boolean!
+  "teams nickname"
+  nickname: String!
+  "internally used urlName"
+  urlName: String!
+  "internally used id"
+  teamId: String!
+  "the alternative name of the team's city"
+  altCityName: String!
+}

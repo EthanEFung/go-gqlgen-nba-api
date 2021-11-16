@@ -1,0 +1,50 @@
+type ScoreboardResponse {
+  numGames: Int!
+  games: [ScoreboardGame!]!
+}
+
+type ScoreboardGame {
+  seasonStageId: Int!
+  seasonYear: String!
+  leagueName: String!
+  gameId: String!
+  arena: ScoreboardArena!
+  isGameActivated: Boolean!
+  startTimeUTC: String!
+  endTimeUTC: String!
+  gameUrlCode: String!
+  period: ScoreboardPeriod!
+  vTeam: ScoreboardTeam!
+  hTeam: ScoreboardTeam!
+}
+
+type ScoreboardArena {
+  name: String!
+  isDomestic: Boolean!
+  city: String!
+  stateAbbr: String!
+  country: String!
+}
+
+type ScoreboardPeriod {
+  current: Int!
+  type: Int!
+  maxRegular: Int!
+  isHalftime: Boolean!
+  isEndOfPeriod: Boolean!
+}
+
+type ScoreboardTeam {
+  teamId: String!
+  triCode: String!
+  win: String!
+  loss: String!
+  seriesWin: String!
+  seriesLoss: String!
+  score: String!
+  linescore: [ScoreboardLineScore!]!
+}
+
+type ScoreboardLineScore {
+  score: String!
+}

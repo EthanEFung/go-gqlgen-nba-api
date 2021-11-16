@@ -1,0 +1,47 @@
+type PlayersResponse {
+  league: PlayersLeagues!
+}
+
+type PlayersLeagues {
+  africa: [PlayersPlayer!]! 
+  sacramento: [PlayersPlayer!]!
+  standard: [PlayersPlayer!]!
+  utah: [PlayersPlayer!]!
+  vegas: [PlayersPlayer!]!
+}
+
+type PlayersPlayer {
+  firstName: String!
+  lastName: String!
+  personId: String!
+  teamId: String!
+  jersey: String!
+  isActive: Boolean!
+  pos: String!
+  heightFeet: String!
+  heightInches: String!
+  heightMeters: String!
+  weightPounds: String!
+  weightKilograms: String!
+  dateOfBirthUTC: String!
+  teams: [PlayersTeam!]!
+  draft: PlayersDraft!
+  nbaDebutYear: String!
+  yearsPro: String!
+  collegeName: String!
+  lastAffiliation: String!
+  country: String!
+}
+
+type PlayersTeam {
+  teamId: String!
+  seasonStart: String!
+  seasonEnd: String!
+}
+
+type PlayersDraft {
+  teamId: String!
+  pickNum: String!
+  roundNum: String!
+  seasonYear: String!
+}

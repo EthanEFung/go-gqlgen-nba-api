@@ -1,0 +1,11 @@
+# https://gqlgen.com/getting-started/
+
+type Query {
+  scoreboard: ScoreboardResponse!
+  teams: TeamsResponse!
+  players: PlayersResponse!
+  coaches: CoachesResponse!
+  schedule: ScheduleResponse!
+}
+
+

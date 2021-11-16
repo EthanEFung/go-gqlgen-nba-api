@@ -1,0 +1,26 @@
+type CoachesResponse {
+  league: CoachesLeague!
+}
+
+type CoachesLeague {
+  standard: [CoachesCoach!]!
+}
+
+type CoachesCoach {
+  firstName: String!
+  lastName: String!
+  personId: String!
+  teamId: String!
+  sortSequence: String!
+  college: String!
+  teamSitesOnly: CoachesTeamSites!
+  isAssistant: Boolean!
+}
+
+type CoachesTeamSites {
+  displayName: String!
+  coachesCode: String!
+  coachRole: String!
+  teamCode: String!
+  teamTricode: String!
+}

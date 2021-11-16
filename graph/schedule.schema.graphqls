@@ -1,0 +1,38 @@
+type ScheduleResponse {
+  league: ScheduleLeague!
+}
+
+type ScheduleLeague {
+  standard: [ScheduleGame!]!
+  africa: [ScheduleGame!]!
+  sacramento: [ScheduleGame!]!
+  vegas: [ScheduleGame!]!
+  utah: [ScheduleGame!]!
+}
+
+type ScheduleGame {
+  gameId: String!
+  seasonStageId: Int!
+  gameUrlCode: String!
+  statusNum: Int!
+  extendedStatusNum: Int!
+  isStartTimeTBD: Boolean!
+  startTimeUTC: String!
+  isBuzzerBeater: Boolean!
+  period: ScheduleGamePeriod!
+  hTeam: ScheduleGameTeam!
+  vTeam: ScheduleGameTeam!
+}
+
+type ScheduleGamePeriod {
+  current: Int!
+  type: Int!
+  maxRegular: Int!
+}
+
+type ScheduleGameTeam {
+  teamId: String!
+  score: String!
+  win: String!
+  loss: String!
+}
